@@ -41,7 +41,7 @@ Project.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'project',
-  }
+  },
 );
 
 module.exports = Project;
