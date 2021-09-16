@@ -25,6 +25,9 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "husky": "^7.0.2",
+    "husky": {
+      "hooks": {}
+    },
     "prettier": "^2.4.0"
   }
 }
