@@ -16,7 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -34,6 +34,14 @@ User.init(
       validate: {
         len: [8],
       },
+    },
+    company: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    github_link: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
