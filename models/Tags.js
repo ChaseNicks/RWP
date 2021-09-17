@@ -20,7 +20,7 @@ Tags.init(
       allowNull: false,
       references: {
         model: 'tag',
-        key: 'id'
+        key: 'id',
       },
     },
     user_id: {
@@ -33,9 +33,9 @@ Tags.init(
     post_id: {
       type: DataTypes.INTEGER,
       references: {
-         model: 'post',
-         key: 'id' 
-        },
+        model: 'post',
+        key: 'id',
+      },
     },
   },
   {
@@ -44,7 +44,7 @@ Tags.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'tags',
-  }
+  },
 );
 
 module.exports = Tags;

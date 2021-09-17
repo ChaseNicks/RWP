@@ -29,7 +29,7 @@ Post.init(
       allowNull: false,
       references: {
         model: 'tag',
-        key: 'id'
+        key: 'id',
       },
     },
     user_id: {
@@ -46,7 +46,7 @@ Post.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'post',
-  }
+  },
 );
 
 module.exports = Post;
