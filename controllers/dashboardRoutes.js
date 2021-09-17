@@ -101,12 +101,9 @@ router.get('/users', withAuth, async ({ res }) => {
 router.get('/resent-posts', withAuth, async (req, res) => {
   try {
     const dbRecentPostData = await Post.findAll({
-      where: {
-        user_id: req.session.user_id,
-      },
       attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
       order: [['date_created', 'DESC']],
-      limit: 12,
+      limit: 8,
     });
 
     const resentPosts = dbRecentPostData.map((post) =>
