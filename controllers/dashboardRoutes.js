@@ -31,7 +31,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    res.render('dashboard', { posts, loggedIn: true });
+    res.render('dashboard', { posts, logged_in: true });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -75,9 +75,16 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 
     const post = dbPostData.get({ plain: true });
-    res.render('edit-post', { post, loggedIn: true });
+    res.render('edit-post', { post, logged_in: true });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+// Calls the new dashboard route to create new posts
+router.get('/new', ({ res }) => {
+  res.render('new-post', { logged_in: true });
+});
+
+module.exports = router;
