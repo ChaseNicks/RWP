@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Tags, Comments } = require('../models');
+const { User, Post, Tags } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Gets all the posts and passes them to the handlebars renderer
@@ -12,20 +12,19 @@ router.get('/', withAuth, async (req, res) => {
       attributes: ['id', 'title', 'content', 'post_tags', 'created_at'],
       include: [
         {
-          model: Comments,
-          attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
+          model: Tags,
+          attributes: [
+            'id',
+            'category',
+            'post_tags',
+            'user_id',
+            'post_id',
+            'created_at',
+          ],
           include: {
             model: User,
             attributes: ['username'],
           },
-        },
-        {
-          model: User,
-          attributes: ['username'],
-        },
-        {
-          model: Tags,
-          attributes: ['category'],
         },
       ],
     });
@@ -33,6 +32,50 @@ router.get('/', withAuth, async (req, res) => {
     const posts = dbPostData.map((post) => post.get({ plain: true }));
 
     res.render('dashboard', { posts, loggedIn: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Gets the info needed for one post for editing and passes them to the handlebars renderer
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Post.findOne({
+      where: {
+        id: req.params.id,
+      },
+      attributes: ['id', 'title', 'content', 'post_tags', 'created_at'],
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tags,
+          attributes: [
+            'id',
+            'category',
+            'post_tags',
+            'user_id',
+            'post_id',
+            'created_at',
+          ],
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
+    });
+
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+
+    const post = dbPostData.get({ plain: true });
+    res.render('edit-post', { post, loggedIn: true });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
