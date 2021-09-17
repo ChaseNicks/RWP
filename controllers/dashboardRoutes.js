@@ -9,7 +9,14 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
-      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      attributes: [
+        'id',
+        'title',
+        'content',
+        'post_tags',
+        'upvotes',
+        'date_created',
+      ],
       include: [
         {
           model: Tags,
@@ -45,7 +52,14 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      attributes: [
+        'id',
+        'title',
+        'content',
+        'post_tags',
+        'upvotes',
+        'date_created',
+      ],
       include: [
         {
           model: User,
@@ -101,7 +115,14 @@ router.get('/users', withAuth, async ({ res }) => {
 router.get('/resent-posts', withAuth, async ({ res }) => {
   try {
     const dbRecentPostData = await Post.findAll({
-      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      attributes: [
+        'id',
+        'title',
+        'content',
+        'post_tags',
+        'upvotes',
+        'date_created',
+      ],
       include: [
         {
           model: Tags,
@@ -133,10 +154,18 @@ router.get('/resent-posts', withAuth, async ({ res }) => {
   }
 });
 
+// Get the posts and groups them by the tag name
 router.get('/posts-by-tags', withAuth, async ({ res }) => {
   try {
     const dbPostsByTagsData = await Post.findAll({
-      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      attributes: [
+        'id',
+        'title',
+        'content',
+        'post_tags',
+        'upvotes',
+        'date_created',
+      ],
       include: [
         {
           model: Tags,
@@ -162,6 +191,46 @@ router.get('/posts-by-tags', withAuth, async ({ res }) => {
     );
 
     res.render('posts-by-tags', { postsByTags, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Gets top posts based on the upvotes
+router.get('/top-posts', withAuth, (req, res) => {
+  try {
+    const dbUpvotesData = await Post.findAll({
+      attributes: [
+        'id',
+        'title',
+        'content',
+        'post_tags',
+        'upvotes',
+        'date_created',
+      ],
+      include: [
+        {
+          model: Tags,
+          attributes: [
+            'id',
+            'category',
+            'post_tags',
+            'user_id',
+            'post_id',
+            'created_at',
+          ],
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
+      order: [['upvotes', 'DESC']],
+    });
+
+    const topPosts = dbUpvotesData.map((post) => post.get({ plain: true }));
+
+    res.render('top-posts', { topPosts, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
