@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <title>Fund My Project!</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -18,12 +21,7 @@
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+
       </nav>
     </header>
     <main class="container container-fluid mt-5">
@@ -31,7 +29,7 @@
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
@@ -42,3 +40,13 @@
 </body>
 
 </html>
+{{#if logged_in}}
+<a href="/dashboard">Dashboard</a> |
+<button class="no-button" id="logout">logout</button>
+{{else}}
+<a href="/login">login</a>
+{{/if}}
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
