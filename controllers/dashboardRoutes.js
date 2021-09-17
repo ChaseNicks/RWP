@@ -98,10 +98,27 @@ router.get('/users', withAuth, async ({ res }) => {
 });
 
 // Gets posts and returns them based on date_created
-router.get('/resent-posts', withAuth, async (req, res) => {
+router.get('/resent-posts', withAuth, async ({ res }) => {
   try {
     const dbRecentPostData = await Post.findAll({
       attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      include: [
+        {
+          model: Tags,
+          attributes: [
+            'id',
+            'category',
+            'post_tags',
+            'user_id',
+            'post_id',
+            'created_at',
+          ],
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
       order: [['date_created', 'DESC']],
       limit: 8,
     });
@@ -111,6 +128,40 @@ router.get('/resent-posts', withAuth, async (req, res) => {
     );
 
     res.render('resent-posts', { resentPosts, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/posts-by-tags', withAuth, async ({ res }) => {
+  try {
+    const dbPostsByTagsData = await Post.findAll({
+      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      include: [
+        {
+          model: Tags,
+          attributes: [
+            'id',
+            'category',
+            'post_tags',
+            'user_id',
+            'post_id',
+            'created_at',
+          ],
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
+      group: ['post_tags'],
+    });
+
+    const postsByTags = dbPostsByTagsData.map((post) =>
+      post.get({ plain: true }),
+    );
+
+    res.render('posts-by-tags', { postsByTags, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
