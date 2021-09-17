@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
-      attributes: ['id', 'title', 'content', 'post_tags', 'created_at'],
+      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
       include: [
         {
           model: Tags,
@@ -45,7 +45,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'title', 'content', 'post_tags', 'created_at'],
+      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
       include: [
         {
           model: User,
@@ -82,8 +82,23 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
+// Gets all users from the database
+router.get('/users', withAuth, async ({ res }) => {
+  try {
+    const dbUserData = await User.findAll({
+      attributes: { exclude: ['password'] },
+    });
+
+    const users = dbUserData.map((user) => user.get({ plain: true }));
+
+    res.render('users', { users, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Calls the new dashboard route to create new posts
-router.get('/new', ({ res }) => {
+router.get('/new', withAuth, ({ res }) => {
   res.render('new-post', { logged_in: true });
 });
 
