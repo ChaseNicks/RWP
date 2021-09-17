@@ -12,11 +12,11 @@ Post.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     date_created: {
@@ -24,7 +24,7 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    post_tags: {
+    tag_id: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
