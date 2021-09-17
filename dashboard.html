@@ -39,12 +39,12 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item home" href="./index.html"> Home </a>
+          <a class="navbar-item home" href="./index-test.html"> Home </a>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <button class="button new-post-btn">
+              <button class="button new-post-btn" id="newPostBtn">
                 POST
                 <i class="fas fa-pen-alt"></i>
               </button>
@@ -70,6 +70,8 @@
             </div>
             <div class="column is-8 posts-column">
               <p class="title posts-header">Your Posts</p>
+
+              
             </div>
             <div class="column is-2 has-text-centered jobs-column">
               <div class="card is-centered job-card">
@@ -112,6 +114,35 @@
           >.
         </p>
       </div>
+<!--Modal for new posts-->
+      <div class="modal new-post-modal" id="new-post-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <form class="form new-post-form">
+            <div class="form-group">
+              <label for="post-title">Post Title:</label>
+              <input class="form-input" type="text" id="project-name" name="post-title" />
+            </div>
+      
+            <div class="form-group">
+              <label for="post-content">Content:</label>
+              <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="post-tags">Tags:</label>
+              <input class="form-input" type="text" id="post-tags" name="post-tags" />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+          </form>
+        </div>
+        <button class="modal-close-btn is-large" aria-label="close"></button>
+      </div>
     </footer>
+
+    
+    <script src="./public/js/newPost.js"></script>
   </body>
+ 
 </html>

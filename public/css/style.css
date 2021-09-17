@@ -2,7 +2,7 @@ main {
   margin-top: 80px; /* Add a top margin to avoid content overlay */
 }
 .footer {
-  background-color: #a26360;
+  background-color: #2A363B;
   border-top: 2px solid #b1d6c0;
 }
 
@@ -10,7 +10,7 @@ main {
   margin-top: 20px;
   padding: 10px;
   font-size: 2.5rem;
-  color: #b1d6c0;
+  color: #E84A5F;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
 }
@@ -19,27 +19,27 @@ main {
   margin-top: 20px;
   font-size: 2.5rem;
   padding-right: 10px;
-  color: #b1d6c0;
+  color: #E84A5F;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
   font-weight: bold;
 }
 
 .hero-head {
-  background-color: #a26360;
+  background-color: #2A363B;
   z-index: 7;
   border-bottom: 4px solid #b1d6c0;
 }
 .navbar {
   overflow: hidden;
-  background-color: #a26360;
+  background-color: #2A363B;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   border-bottom: 2px solid #b1d6c0;
 }
 .navbar-item {
-  color: #c0e2cd;
+  color: #FF847C;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   font-size: 1.5rem;
   margin-top: 10px;
@@ -49,21 +49,21 @@ main {
 }
 
 .hero {
-  background-color: #e8b298;
+  background-color: #99B898;
   margin-top: 10px;
 }
 .hero-landing {
-  background-color: #a26360;
+  background-color: #2A363B;
 }
 .main-page-columns {
   margin-top: 10%;
 }
 .card {
-  border: 2px double #a26360;
+  border: 2px double #2A363B;
   box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
 }
 .logout-btn {
-  background-color: #c0e2cd;
+  background-color: #FF847C;
   margin-bottom: 50px;
   color: black;
   font-weight: bold;
@@ -72,13 +72,13 @@ main {
   box-shadow: 1px 2px 1px black;
 }
 .landing-title {
-  color: #b1d6c0;
+  color: #E84A5F;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
   font-size: 3rem;
 }
 .landing-subtitle {
-  color: #b1d6c0;
+  color: #E84A5F;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
   font-size: 2rem;
@@ -92,31 +92,31 @@ a:active {
   color: inherit;
 }
 .dashboard {
-  color: #b1d6c0;
+  color: #FECEAB;
   font-weight: bold;
   padding: 5px;
 }
 a.dashboard:hover {
-  background-color: #bdd1c5;
-  color: #9c4d49;
+  background-color: #FECEAB;
+  color: #2A363B;
   font-weight: bolder;
-  border: 2px solid white;
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 4px 2px #FF847C;
 }
 .home {
-  color: #b1d6c0;
+  color: #FECEAB;
   font-weight: bold;
   padding: 5px;
+  height: 50%;
+  margin-top: 30%;
+  margin-left: 5px;
 }
 a.home:hover {
-  background-color: #bdd1c5;
-  color: #9c4d49;
+  background-color: #FECEAB;
+  color: #2A363B;
   font-weight: bolder;
-  border: 2px solid white;
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  padding: 5px;
+  box-shadow: 2px 4px 2px #FF847C;
 }
 .column {
   text-align: center;
@@ -131,33 +131,34 @@ a.home:hover {
   display: block;
 }
 .dashboard-main {
-  background-color: #e8b298;
+  background-color: #99B898;
   padding-left: 5px;
   padding-right: 5px;
 }
 .posts-column {
-  background-color: #e2b968;
+  background-color: #FF847C;
+  
   height: 100vh;
   padding-top: 5%;
   margin-top: -38px;
-  border-left: 3px solid #a26360;
-  border-right: 3px solid #a26360;
-  border-bottom: 3px solid #a26360;
+  border-left: 3px solid #2A363B;
+  border-right: 3px solid #2A363B;
+  border-bottom: 3px solid #2A363B;
 }
 .posts-header {
-  color: white;
+  color: #2A363B;
   font-size: 3rem;
-  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.5);
 }
 ul {
   list-style-type: square;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
   padding-right: 20px;
 }
 li:hover {
-  color: #bdd1c5;
+  color: #E84A5F;
 }
 .new-post-btn {
   background-color: #e2b968;
@@ -181,15 +182,15 @@ li:hover {
   margin-left: 3%;
 }
 .job-card {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: white;
   color: black;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .jobs-media {
-  background-color: #a26360;
+  background-color: #2A363B;
   padding-top: 10px;
   margin: -10px;
-  border: 2px double #e2b968;
+  border: 2px double #E84A5F;
   border-radius: 8px;
 }
 .job-title {
@@ -224,4 +225,14 @@ li:hover {
 .signup {
   font-size: 2rem;
   font-weight: bold;
+}
+.new-post-form {
+  background-color: rgb(150, 150, 150);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+label {
+  color: white;
+  font-weight: bolder;
 }
