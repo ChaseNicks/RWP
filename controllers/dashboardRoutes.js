@@ -97,6 +97,28 @@ router.get('/users', withAuth, async ({ res }) => {
   }
 });
 
+// Gets posts and returns them based on date_created
+router.get('/resent-posts', withAuth, async (req, res) => {
+  try {
+    const dbRecentPostData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      attributes: ['id', 'title', 'content', 'post_tags', 'date_created'],
+      order: [['date_created', 'DESC']],
+      limit: 12,
+    });
+
+    const resentPosts = dbRecentPostData.map((post) =>
+      post.get({ plain: true }),
+    );
+
+    res.render('resent-posts', { resentPosts, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Calls the new dashboard route to create new posts
 router.get('/new', withAuth, ({ res }) => {
   res.render('new-post', { logged_in: true });
