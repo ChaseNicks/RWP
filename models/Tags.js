@@ -12,16 +12,8 @@ Tags.init(
       autoIncrement: true,
     },
     category: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
-    },
-    post_tags: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'tag',
-        key: 'id',
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -34,6 +26,13 @@ Tags.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'post',
+        key: 'id',
+      },
+    },
+    comment_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'comments',
         key: 'id',
       },
     },

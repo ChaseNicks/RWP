@@ -36,7 +36,7 @@ User.init(
       },
     },
     company: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     github_link: {
