@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Tags } = require('../models');
+const { User, Post, Tag } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Gets all the posts and passes them to the handlebars renderer
@@ -13,25 +13,19 @@ router.get('/', withAuth, async (req, res) => {
         'id',
         'title',
         'content',
-        'post_tags',
+        'tag_id',
         'upvotes',
+        'user_id',
         'date_created',
       ],
       include: [
         {
-          model: Tags,
-          attributes: [
-            'id',
-            'category',
-            'post_tags',
-            'user_id',
-            'post_id',
-            'created_at',
-          ],
-          include: {
-            model: User,
-            attributes: ['username'],
-          },
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
         },
       ],
     });
@@ -56,7 +50,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         'id',
         'title',
         'content',
-        'post_tags',
+        'tag_id',
+        'user_id',
         'upvotes',
         'date_created',
       ],
@@ -66,19 +61,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
           attributes: ['username'],
         },
         {
-          model: Tags,
-          attributes: [
-            'id',
-            'category',
-            'post_tags',
-            'user_id',
-            'post_id',
-            'created_at',
-          ],
-          include: {
-            model: User,
-            attributes: ['username'],
-          },
+          model: Tag,
+          attributes: ['category'],
         },
       ],
     });
@@ -119,25 +103,19 @@ router.get('/resent-posts', withAuth, async ({ res }) => {
         'id',
         'title',
         'content',
-        'post_tags',
+        'tag_id',
         'upvotes',
+        'user_id',
         'date_created',
       ],
       include: [
         {
-          model: Tags,
-          attributes: [
-            'id',
-            'category',
-            'post_tags',
-            'user_id',
-            'post_id',
-            'created_at',
-          ],
-          include: {
-            model: User,
-            attributes: ['username'],
-          },
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
         },
       ],
       order: [['date_created', 'DESC']],
@@ -162,28 +140,22 @@ router.get('/posts-by-tags', withAuth, async ({ res }) => {
         'id',
         'title',
         'content',
-        'post_tags',
+        'tag_id',
+        'user_id',
         'upvotes',
         'date_created',
       ],
       include: [
         {
-          model: Tags,
-          attributes: [
-            'id',
-            'category',
-            'post_tags',
-            'user_id',
-            'post_id',
-            'created_at',
-          ],
-          include: {
-            model: User,
-            attributes: ['username'],
-          },
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
         },
       ],
-      group: ['post_tags'],
+      order: [['tag_id', 'ASC']],
     });
 
     const postsByTags = dbPostsByTagsData.map((post) =>
@@ -197,32 +169,26 @@ router.get('/posts-by-tags', withAuth, async ({ res }) => {
 });
 
 // Gets top posts based on the upvotes
-router.get('/top-posts', withAuth, (req, res) => {
+router.get('/top-posts', withAuth, async (req, res) => {
   try {
     const dbUpvotesData = await Post.findAll({
       attributes: [
         'id',
         'title',
         'content',
-        'post_tags',
+        'tag_id',
         'upvotes',
+        'user_id',
         'date_created',
       ],
       include: [
         {
-          model: Tags,
-          attributes: [
-            'id',
-            'category',
-            'post_tags',
-            'user_id',
-            'post_id',
-            'created_at',
-          ],
-          include: {
-            model: User,
-            attributes: ['username'],
-          },
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
         },
       ],
       order: [['upvotes', 'DESC']],
