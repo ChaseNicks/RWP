@@ -10,7 +10,7 @@ main {
   margin-top: 20px;
   padding: 10px;
   font-size: 2.5rem;
-  color: #E84A5F;
+  color: #2A363B;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
 }
@@ -19,28 +19,28 @@ main {
   margin-top: 20px;
   font-size: 2.5rem;
   padding-right: 10px;
-  color: #E84A5F;
+  color: #2A363B;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
   font-weight: bold;
 }
 
-.hero-head {
+/* .hero-head {
   background-color: #2A363B;
   z-index: 7;
-  border-bottom: 4px solid #b1d6c0;
-}
+  border-bottom: 4px solid #2A363B;
+} */
 .navbar {
   overflow: hidden;
-  background-color: #2A363B;
+  background-color: #99B898;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  border-bottom: 2px solid #b1d6c0;
+  border-bottom: 2px solid #2A363B;
 }
 .navbar-item {
   color: #FF847C;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); */
   font-size: 1.5rem;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -49,7 +49,7 @@ main {
 }
 
 .hero {
-  background-color: #99B898;
+  background-color: #2A363B;
   margin-top: 10px;
 }
 .hero-landing {
@@ -63,7 +63,7 @@ main {
   box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.5);
 }
 .logout-btn {
-  background-color: #FF847C;
+  background-color: #E84A5F;
   margin-bottom: 50px;
   color: black;
   font-weight: bold;
@@ -125,22 +125,23 @@ a.home:hover {
 
 .side-nav {
   font-size: 1.5rem;
-  margin-right: 3%;
+  margin-right: 10px;
+  padding: 0;
 }
 .dash-card {
   display: block;
 }
 .dashboard-main {
-  background-color: #99B898;
+  background-color: #2A363B;
   padding-left: 5px;
   padding-right: 5px;
 }
 .posts-column {
-  background-color: #FF847C;
-  
+  background-color: #99B898;
   height: 100vh;
   padding-top: 5%;
   margin-top: -38px;
+  margin-left: 25px;
   border-left: 3px solid #2A363B;
   border-right: 3px solid #2A363B;
   border-bottom: 3px solid #2A363B;
@@ -161,11 +162,12 @@ li:hover {
   color: #E84A5F;
 }
 .new-post-btn {
-  background-color: #e2b968;
-  color: white;
+  background-color: #FECEAB;
+  color: #2A363B;
   padding: 10px;
   font-weight: bold;
   border-radius: 10px;
+  box-shadow: 1px 2px 1px black;
 }
 .new-post-main {
   background-color: #e2b968;
@@ -179,12 +181,14 @@ li:hover {
   border-radius: 15px;
 }
 .jobs-column {
-  margin-left: 3%;
+  margin-left: 50px;
+  padding-left: 20px;
 }
 .job-card {
   background-color: white;
   color: black;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 .jobs-media {
   background-color: #2A363B;
@@ -201,11 +205,11 @@ li:hover {
 }
 .apply-btn {
   padding: 5px;
-  color: #e2b968;
+  color: #2A363B;
   font-size: 1.5rem;
   font-weight: bolder;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  background-color: #7d8985;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.801);
+  background-color: #99B898;
   border-radius: 8px;
   width: 100%;
 }
