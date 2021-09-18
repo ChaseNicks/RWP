@@ -6,12 +6,12 @@
       </p>
       <div class="columns is-centered">
         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-          <form action="" class="box">
+          <form action="" class="box login-form">
             <p class="email-login">Login</p>
             <div class="field">
               <label for="" class="label">Email</label>
               <div class="control has-icons-left">
-                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required />
+                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" id="email-login" required />
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>
@@ -20,31 +20,25 @@
             <div class="field">
               <label for="" class="label">Password</label>
               <div class="control has-icons-left">
-                <input type="password" placeholder="*******" class="input" required />
+                <input type="password" placeholder="*******" class="input" id="password-login" required />
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>
               </div>
             </div>
             <div class="field">
-              <label for="" class="checkbox">
-                <input type="checkbox" />
-                Remember me
-              </label>
-            </div>
-            <div class="field">
-              <button class="button is-success">Login</button>
+              <button class="button is-success" type="submit">Login</button>
             </div>
           </form>
         </div>
 
         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-          <form action="" class="box">
+          <form action="" class="box signup-form">
             <p class="signup">Sign Up</p>
             <div class="field">
               <label for="" class="label">Username</label>
               <div class="control has-icons-left">
-                <input type="name" placeholder="e.g. BeardoMattix" class="input" required />
+                <input type="username" placeholder="e.g. BeardoMattix" class="input" id="name-signup" required />
                 <span class="icon is-small is-left">
                   <i class="fa fa-pen"></i>
                 </span>
@@ -53,7 +47,7 @@
             <div class="field">
               <label for="" class="label">Email</label>
               <div class="control has-icons-left">
-                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required />
+                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" id="email-signup" required />
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>
@@ -62,7 +56,7 @@
             <div class="field">
               <label for="" class="label">Password</label>
               <div class="control has-icons-left">
-                <input type="password" placeholder="*******" class="input" required />
+                <input type="password" placeholder="*******" class="input" id="password-signup" required />
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>
@@ -70,7 +64,7 @@
             </div>
 
             <div class="field">
-              <button class="button is-success">Sign Up</button>
+              <button class="button is-success" type="submit">Sign Up</button>
             </div>
           </form>
         </div>

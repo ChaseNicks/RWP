@@ -1,10 +1,28 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |post| }}
+<div class="columns">
+  <div class="column is-one-fifth has-text-left">
+    <div class="side-nav">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a>Users</a></li>
+        <li><a>Recent Posts</a></li>
+        <li><a>Posts by Tags</a></li>
+        <li><a>Top Posts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="column is-four-fifths">
+    {{#each posts as |post| }}
+    {{>posts post}}
+    {{/each}}
+  </div>
+</div>
+{{!-- {{#each projects as |post| }}
 <div class="row mb-4 post">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
+
       <a href="/post/{{post.id}}">{{post.name}}</a>
     </h2>
     <p>
@@ -21,4 +39,4 @@
     </p>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}

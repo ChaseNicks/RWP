@@ -7,46 +7,77 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <title>Fund My Project!</title>
+  <title>Code Social</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+  <nav class="navbar">
+    <div class="container">
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <i class="fas fa-keyboard"></i>
+          <p class="logo-navbar">CODE SOCIAL</p>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            {{#if logged_in}}
+            <div class="buttons">
+              <button class="button new-post-btn" id="newPostBtn">
+                POST
+                <i class="fas fa-pen-alt"></i>
+              </button>
+              <button class="button mb-2 p-4 logout-btn" type="button" id="logout">Logout</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal new-post-modal" id="new-post-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <!-- Any other Bulma elements you want -->
+            <form class="form new-post-form">
+              <div class="form-group">
+                <label for="post-title">Post Title:</label>
+                <input class="form-input" type="text" id="post-name" name="post-title" />
+              </div>
 
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
+              <div class="form-group">
+                <label for="post-content">Content:</label>
+                <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="post-tags">Tags:</label><br>
+                <input type="checkbox" id="category1" name="category1" value="Company Info">
+                <label for="category1"> Company Info</label><br>
+                <input type="checkbox" id="category2" name="category2" value="Interview Help">
+                <label for="category2"> Interview Help</label><br>
+                <input type="checkbox" id="category3" name="category3" value="Networking">
+                <label for="category3"> Networking</label><br>
+                <input type="checkbox" id="category4" name="category4" value="Front-End">
+                <label for="category4"> Front-End</label><br>
+                <input type="checkbox" id="category5" name="category5" value="Back-End">
+                <label for="category5"> Back-End</label><br>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Post</button>
+              </div>
+            </form>
+          </div>
+          <button class="modal-close-btn is-large" aria-label="close"></button>
+        </div>
 
-    </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+  {{{body}}}
 </body>
-
-</html>
 {{#if logged_in}}
-<a href="/dashboard">Dashboard</a> |
-<button class="no-button" id="logout">logout</button>
-{{else}}
-<a href="/login">login</a>
-{{/if}}
-
-{{#if logged_in}}
+<script src="/js/newPost.js"></script>
 <script src="/js/logout.js"></script>
 {{/if}}
+
+</html>
