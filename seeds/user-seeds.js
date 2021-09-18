@@ -12,7 +12,7 @@ const userData = [
     username: 'WalkerRoss',
     email: 'walker@gmail.com',
     password: 'pass123456',
-    company: 'Goolge',
+    company: 'Google',
     github_link: 'https://github.com/walker',
   },
   {
