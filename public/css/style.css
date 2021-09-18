@@ -3,7 +3,11 @@ main {
 }
 .footer {
   background-color: #2A363B;
+  color: #99B898;
   border-top: 2px solid #b1d6c0;
+  font-weight: bolder;
+  height: 10%;
+  margin-bottom: -10px;
 }
 
 .fa-keyboard {
