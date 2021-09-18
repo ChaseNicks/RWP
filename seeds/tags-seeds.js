@@ -1,45 +1,35 @@
-const { Tags } = require('../models');
+const { Tag } = require('../models');
 
 const tagData = [
-    {
-        id: 1,
-        catgory: "Front-End",
-      },
-      {
-        id: 2,
-        catgory: "Back-End",
-      },
-      {
-        id: 3,
-        catgory: "Database",
-      },
-      {
-        id: 4,
-        catgory: "Full-Stack Development",
-      },
-      {
-        id: 5,
-        catgory: "File Structure",
-      },
-      {
-        id: 6,
-        catgory: "Algorithms",
-      },
-      {
-        id: 7,
-        catgory: "Data Structures",
-      },
-      {
-        id: 8,
-        catgory: "Frameworks",
-      },
-      {
-        id: 9,
-        catgory: "Libraries",
-      },
-      
+  {
+    category: 'Front-End',
+  },
+  {
+    category: 'Back-End',
+  },
+  {
+    category: 'Database',
+  },
+  {
+    category: 'Full-Stack Development',
+  },
+  {
+    category: 'File Structure',
+  },
+  {
+    category: 'Algorithms',
+  },
+  {
+    category: 'Data Structures',
+  },
+  {
+    category: 'Frameworks',
+  },
+  {
+    category: 'Libraries',
+  },
 ];
 
-const seedTags = () => Tags.bulkCreate(tagData);
+const seedTags = () => Tag.bulkCreate(tagData);
 
 module.exports = seedTags;
