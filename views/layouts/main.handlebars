@@ -36,7 +36,7 @@
           <div class="modal-background"></div>
           <div class="modal-content">
             <!-- Any other Bulma elements you want -->
-            <form class="form new-post-form">
+            <form class="form new-post-form" id="new-post-form">
               <div class="form-group">
                 <label for="post-title">Post Title:</label>
                 <input class="form-input" type="text" id="post-name" name="post-title" />
@@ -44,10 +44,10 @@
 
               <div class="form-group">
                 <label for="post-content">Content:</label>
-                <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+                <input class="form-input" id="post-content" name="post-content"></input>
               </div>
               <div class="form-group">
-                <label for="post-tags">Tags:</label><br>
+                <label for="post-tags" name="post-tags">Tags:</label><br>
                 <input type="radio" id="category" name="category" value="Company Info">
                 <label for="Company Info"> Company Info</label><br>
                 <input type="radio" id="category" name="category" value="Interview Help">

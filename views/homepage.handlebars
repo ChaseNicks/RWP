@@ -17,26 +17,3 @@
     {{/each}}
   </div>
 </div>
-{{!-- {{#each projects as |post| }}
-<div class="row mb-4 post">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-
-      <a href="/post/{{post.id}}">{{post.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount post.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{post.content}}
-    </p>
-  </div>
-</div>
-{{/each}} --}}
