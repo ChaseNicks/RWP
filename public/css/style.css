@@ -1,3 +1,7 @@
+body {
+  background-color: #2A363B;
+  margin-top: 7%;
+}
 main {
   margin-top: 80px; /* Add a top margin to avoid content overlay */
 }
@@ -28,12 +32,6 @@ main {
     -1px 0 0 #000;
   font-weight: bold;
 }
-
-/* .hero-head {
-  background-color: #2A363B;
-  z-index: 7;
-  border-bottom: 4px solid #2A363B;
-} */
 .navbar {
   overflow: hidden;
   background-color: #99B898;
@@ -44,7 +42,6 @@ main {
 }
 .navbar-item {
   color: #FF847C;
-  /* text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); */
   font-size: 1.5rem;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -129,7 +126,7 @@ a.home:hover {
 
 .side-nav {
   font-size: 1.5rem;
-  margin-right: 10px;
+  margin-right: 20px;
   padding: 0;
 }
 .dash-card {
