@@ -238,8 +238,17 @@ li:hover {
   border: 2px solid black;
   border-radius: 10px;
   padding: 10px;
+  margin: auto;
+  text-align: center;
 }
 label {
   color: white;
   font-weight: bolder;
+}
+.post-btn {
+  font-weight: bolder;
+  width: 100%;
+  margin: auto;
+  color: white;
+  background-color: #E84A5F;
 }
