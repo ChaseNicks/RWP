@@ -11,13 +11,15 @@ fetch(
       console.log(job);
       document.querySelector('#jobs').innerHTML += `
       <div class="job">
-      Job Title : ${job.title}
+      <strong>Job Title:</strong> ${job.title}.
       <br>
-      Company: ${job.company.display_name}
+      <strong>Company:</strong> ${job.company.display_name}.
       <br>
-      Location: ${job.location.area.reverse().join(', ')}
+      <strong>Description:</strong> ${job.description}
       <br>
-      Category: ${job.category.label}
+      <strong>Location:</strong> ${job.location.area.reverse().join(', ')}.
+      <br>
+      <strong>Category:</strong> ${job.category.label}.
       <br>
       <br>
       <button><a href="${job.redirect_url}">Apply Now</a></button>
