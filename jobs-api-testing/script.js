@@ -41,7 +41,67 @@ fetch(
     document.querySelector('#latestSalary').innerHTML = latestSalary;
   });
 
-  // Chart.js for top tech companies with most job openings
+
+//   var chartObject = {};
+
+
+//   var xmlhttp = new XMLHttpRequest();
+//   var api = `http://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`;
+//   xmlhttp.open("GET", api, true);
+//   xmlhttp.send();
+//   xmlhttp.onreadystatechange = function(){
+//        if(this.readyState == 4 && this.status == 200){
+//             var data = JSON.parse(this.responseText);
+//             var companies = data.leaderboard.map(function (elem) {
+//               return elem.canonical_name;
+//             });
+//             console.log(companies)
+//             var jobs_open = data.leaderboard.map(function (elem) {
+//               return elem.count;
+//             });
+//             console.log(jobs_open)
+//             var ctx = document.getElementById('MyChart').getContext('2d');
+//             if(chartObject.chart instanceof Chart) {
+//               chartObject.chart.destroy();
+//             }
+//             chartObject.chart = new Chart(ctx, {
+//                 type: 'bar',
+//                 data: {
+//                     labels: companies,
+//                     datasets: [{
+//                         label: 'open',
+//                         data: jobs_open,
+//                         backgroundColor: [
+//                           'rgba(255, 99, 132, 0.2)',
+//                           'rgba(255, 159, 64, 0.2)',
+//                           'rgba(255, 205, 86, 0.2)',
+//                           'rgba(75, 192, 192, 0.2)',
+//                           'rgba(54, 162, 235, 0.2)',
+//                         ],
+//                         borderColor: 
+//                         [
+//                           'rgba(255, 99, 132, 0.2)',
+//                           'rgba(255, 159, 64, 0.2)',
+//                           'rgba(255, 205, 86, 0.2)',
+//                           'rgba(75, 192, 192, 0.2)',
+//                           'rgba(54, 162, 235, 0.2)',
+//                         ],
+//                         borderWidth: 2,
+  
+//                     },
+//                 ]
+//                 },
+//                 options: {
+//                     scales: {
+//                         y: {
+//                             beginAtZero: false
+//                         }
+//                     }
+//                 }
+//             });
+//    }
+// }
+
 var chartObject = {};
 
 fetch(
@@ -61,15 +121,14 @@ fetch(
         data: {
             labels: companies,
             datasets: [{
-                label: 'Top Tech Companies w/ Most Job Openings',
+                label: 'open',
                 data: jobs_open,
                 backgroundColor: [
-                  "rgb(218, 247, 166)",
-                  "rgb(255, 195, 0)",
-                  "rgb(255, 87, 51)",
-                  "rgb(199, 0, 57)",
-                  "rgb(144, 12, 63)",
-                  "rgb(88, 24, 69)",
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
                 ],
                 borderColor: 
                 [
