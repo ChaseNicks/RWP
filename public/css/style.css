@@ -1,6 +1,8 @@
 body {
   background-color: #2A363B;
   margin-top: 7%;
+  width: 100vw;
+  
 }
 main {
   margin-top: 80px; /* Add a top margin to avoid content overlay */
@@ -126,7 +128,7 @@ a.home:hover {
 
 .side-nav {
   font-size: 1.5rem;
-  margin-right: 20px;
+  margin-left: 40px;
   padding: 0;
 }
 .dash-card {
@@ -232,7 +234,7 @@ li:hover {
   font-weight: bold;
 }
 .new-post-form {
-  background-color: rgb(150, 150, 150);
+  background-color: #2A363B;
   border: 2px solid black;
   border-radius: 10px;
   padding: 10px;
