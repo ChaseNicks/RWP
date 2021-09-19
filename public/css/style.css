@@ -1,7 +1,7 @@
 body {
   background-color: #2A363B;
   margin-top: 7%;
-  width: 100vw;
+  width: 100%;
   
 }
 main {
@@ -183,15 +183,16 @@ li:hover {
   padding-bottom: 10px;
   border-radius: 15px;
 }
-.jobs-column {
-  margin-left: 50px;
-  padding-left: 20px;
-}
+/* .jobs-column {
+  margin: 30px;
+  padding-right: 0;
+} */
 .job-card {
   background-color: white;
   color: black;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   width: 100%;
+  margin-right: 50px;
 }
 .jobs-media {
   background-color: #2A363B;
