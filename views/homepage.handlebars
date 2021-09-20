@@ -1,8 +1,8 @@
 <!-- Loop over each object in the projects array -->
-<div class="columns">
-  <div class="column is-one-fifth has-text-left">
+<div class="columns pt-5">
+  <div class="column is-one-fifth is-three-quarters-mobile pt-5">
     <div class="side-nav">
-      <ul>
+      <ul id="nav-links">
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a>Users</a></li>
         <li><a>Recent Posts</a></li>
@@ -15,6 +15,6 @@
     {{#each posts as |post| }}
     {{>posts post}}
     {{/each}}
-    
+
   </div>
 </div>

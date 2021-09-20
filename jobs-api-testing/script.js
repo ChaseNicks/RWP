@@ -10,21 +10,30 @@ fetch(
     data.results.map((job) => {
       console.log(job);
       document.querySelector('#jobs').innerHTML += `
-      <div class="job">
-      <strong>Job Title:</strong> ${job.title}.
-      <br>
-      <strong>Company:</strong> ${job.company.display_name}.
-      <br>
-      <strong>Description:</strong> ${job.description}
-      <br>
-      <strong>Location:</strong> ${job.location.area.reverse().join(', ')}.
-      <br>
-      <strong>Category:</strong> ${job.category.label}.
-      <br>
-      <br>
-      <button><a href="${job.redirect_url}">Apply Now</a></button>
-    
-      </div>
+      <div class="card is-centered job-card">
+    <div class="card-content">
+        <div class="media jobs-media">
+            <div class="media-content job-titles">
+                <p class="title is-8 job-title">${job.title}</p>
+                <p class="subtitle is-8 company-name">${
+                  job.company.display_name
+                }</p>
+            </div>
+        </div>
+        <div class="content jobs-content">
+            <ul class="job-info">
+                <li>${job.decription}</li>
+                <li>${job.location.area.reverse().join(', ')}</li>
+                <li>${job.category.label}</li>
+            </ul>
+            <br />
+            <a href="#">#tags</a> <a href="#">#tags</a>
+            <br />
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+        <button class="apply-btn" href="${job.redirect_url}">Apply</button>
+    </div>
+</div>
       `;
     });
   });
