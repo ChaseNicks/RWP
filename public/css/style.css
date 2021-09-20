@@ -5,6 +5,8 @@ body {
   
 }
 main {
+  background-color: #2A363B;
+  width: 100vw;
   margin-top: 80px; /* Add a top margin to avoid content overlay */
 }
 .footer {
@@ -37,6 +39,7 @@ main {
 .navbar {
   overflow: hidden;
   background-color: #99B898;
+  background-image: linear-gradient(to right, #99B898, #2A363B);
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -54,6 +57,7 @@ main {
 .hero {
   background-color: #2A363B;
   margin-top: 10px;
+  width: 100vw;
 }
 .hero-landing {
   background-color: #2A363B;
@@ -127,9 +131,11 @@ a.home:hover {
 }
 
 .side-nav {
+  position: fixed;
   font-size: 1.5rem;
   margin-left: 40px;
   padding: 0;
+  text-align: left;
 }
 .dash-card {
   display: block;
@@ -140,7 +146,7 @@ a.home:hover {
   padding-right: 5px;
 }
 .posts-column {
-  background-color: #99B898;
+  background-color: #99b898ab;
   height: 100vh;
   padding-top: 5%;
   margin-top: -38px;
@@ -152,7 +158,8 @@ a.home:hover {
 .posts-header {
   color: #2A363B;
   font-size: 3rem;
-  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
+    -1px 0 0 #000;
 }
 ul {
   list-style-type: square;
@@ -183,15 +190,15 @@ li:hover {
   padding-bottom: 10px;
   border-radius: 15px;
 }
-/* .jobs-column {
-  margin: 30px;
+.jobs-column {
+  margin-right: auto;
   padding-right: 0;
-} */
+}
 .job-card {
   background-color: white;
   color: black;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  width: 100%;
+  width: 90%;
   margin-right: 50px;
 }
 .jobs-media {
@@ -252,4 +259,129 @@ label {
   margin: auto;
   color: white;
   background-color: #E84A5F;
+}
+@media only screen and (max-width: 576px) {
+  .navbar {
+    width: 100%;
+    height: 15%;
+  }
+   .posts-column {
+    display: block;
+    width: 100%;
+    padding: 35px;
+    margin: auto;
+  }
+   .jobs-column {
+    display: block;
+    width: 100%;
+    padding: 35px;
+    margin: auto;
+  }
+  .side-nav {
+    display: block;
+    font-size: 10px;
+    margin-top: 10%;
+    text-align: left;
+  }
+  ul {
+    list-style-type: none;
+  }
+ 
+  .logo-navbar {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    padding-right: 10px;
+    color: #2A363B;
+    text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
+      -1px 0 0 #000;
+    font-weight: bold;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: 15%;
+  }
+   .posts-column {
+    display: block;
+    width: 100%;
+    padding: 35px;
+    margin: auto;
+  }
+   .jobs-column {
+    display: block;
+    width: 100%;
+    padding: 35px;
+    margin: auto;
+  }
+  .side-nav {
+    display: block;
+    font-size: 20px;
+    margin-top: 10%;
+    text-align: left;
+  }
+  #nav-links {
+    font-size: 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  
+  .logo-navbar {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    padding-right: 10px;
+    color: #2A363B;
+    text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
+      -1px 0 0 #000;
+    font-weight: bold;
+  }
+}
+@media only screen and (max-width: 998px) {
+  .navbar {
+    width: 100%;
+    height: 20%;
+    margin-bottom: 200px;;
+  }
+  .navbar-brand {
+    display: flex;
+  }
+   .posts-column {
+    display: block;
+    width: 100%;
+    padding: 35px;
+    margin: auto;
+  }
+   .jobs-column {
+    display: block;
+    width: 100%;
+    padding: 35px;
+    margin: auto;
+  }
+  
+  .side-nav {
+    display: block;
+    position: fixed;
+    /* margin-top: 10%; */
+    text-align: left;
+    padding-right: 100px;
+    font-size: 5px;
+  }
+  #nav-links {
+    font-size: 1rem;
+  }
+  ul {
+    list-style-type: none;
+    padding-right: 20px;
+    font-size: 1.5rem;
+  }
+  .logo-navbar {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    padding-right: 10px;
+    color: #2A363B;
+    text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
+      -1px 0 0 #000;
+    font-weight: bold;
+  }
 }

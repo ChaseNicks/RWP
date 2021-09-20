@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Tag } = require('../models');
 const withAuth = require('../utils/auth');
+const fetch = require('node-fetch');
 
 // Gets all the posts and passes them to the handlebars renderer
 router.get('/', withAuth, async (req, res) => {
