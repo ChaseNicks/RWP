@@ -18,14 +18,15 @@ const newFormHandler = async (event) => {
   console.log(title);
   const content = document.querySelector('input[name="post-content"]').value;
   console.log(content);
-  const tag = document.querySelector('input[name="post-tags"]:checked').value;
+  const tag_id = document.querySelector('input[name="category"]:checked').value;
+  console.log(tag_id);
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',
     body: JSON.stringify({
       title,
       content,
-      tag,
+      tag_id,
     }),
     headers: {
       'Content-Type': 'application/json',
