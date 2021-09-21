@@ -25,11 +25,12 @@ fetch(
                 <li>${job.decription}</li>
                 <li>${job.location.area.reverse().join(', ')}</li>
                 <li>${job.category.label}</li>
+
             </ul>
             <br />
             <a href="#">#tags</a> <a href="#">#tags</a>
             <br />
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            <time datetime="2016-1-1"></time>
         </div>
         <button class="apply-btn" href="${job.redirect_url}">Apply</button>
     </div>

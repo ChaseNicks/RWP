@@ -395,3 +395,7 @@ label {
     font-weight: bold;
   }
 }
+
+#comment-text{
+  color: black;
+}

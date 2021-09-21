@@ -76,7 +76,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   try {
     const dbCommentData = await Comment.destroy({
       where: {
-        id: req.params.id,
+        id: req.body.id,
       },
     });
     if (!dbCommentData) {
