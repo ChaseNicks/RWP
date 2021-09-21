@@ -155,6 +155,16 @@ a.home:hover {
   border-right: 3px solid #2A363B;
   border-bottom: 3px solid #2A363B;
 }
+.charts-column {
+  background-color: #99b898ab;
+  height: fit-content;
+  padding-top: 5%;
+  margin-top: -38px;
+  margin-left: 25px;
+  border-left: 3px solid #2A363B;
+  border-right: 3px solid #2A363B;
+  border-bottom: 3px solid #2A363B;
+}
 .posts-header {
   color: #2A363B;
   font-size: 3rem;
