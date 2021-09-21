@@ -2,7 +2,7 @@ var chartObject = {};
 var chartObject2 = {};
 
 fetch(
-  `http://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
+  `https://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
 )
   .then((response) => response.json())
   .then((data) => {
