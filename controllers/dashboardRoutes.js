@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Tag } = require('../models');
+const { User, Post, Tag, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const fetch = require('node-fetch');
 
@@ -18,6 +18,10 @@ router.get('/', withAuth, async (req, res) => {
         {
           model: Tag,
           attributes: ['category'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment'],
         },
       ],
     });
@@ -38,23 +42,29 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: [
-        'id',
-        'title',
-        'content',
-        'tag_id',
-        'user_id',
-        'upvotes',
-        'date_created',
-      ],
+      attributes: ['id', 'content', 'title', 'date_created'],
       include: [
         {
-          model: User,
-          attributes: ['username'],
+          model: Comment,
+          attributes: ['id', 'comment', 'post_id', 'user_id'],
+          include: [
+            {
+              model: Post,
+              attributes: ['date_created'],
+            },
+            {
+              model: User,
+              attributes: ['username'],
+            },
+          ],
         },
         {
           model: Tag,
           attributes: ['category'],
+        },
+        {
+          model: User,
+          attributes: ['username'],
         },
       ],
     });
@@ -65,7 +75,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 
     const post = dbPostData.get({ plain: true });
-    res.render('edit-post', { post, logged_in: true });
+    res.render('single-post', { post, logged_in: true });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
