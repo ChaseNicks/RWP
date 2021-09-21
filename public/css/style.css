@@ -148,9 +148,9 @@ a.home:hover {
 .posts-column {
   background-color: #99b898ab;
   height: 100vh;
-  padding-top: 5%;
-  margin-top: -38px;
-  margin-left: 25px;
+  /* padding-top: 5%; */
+  margin-top: 20px;
+  /* margin-left: 25px; */
   border-left: 3px solid #2A363B;
   border-right: 3px solid #2A363B;
   border-bottom: 3px solid #2A363B;
@@ -201,7 +201,7 @@ li:hover {
   border-radius: 15px;
 }
 .jobs-column {
-  margin-right: auto;
+  /* margin-right: auto; */
   background-color: #2A363B;
   /* padding: 10px; */
 }
@@ -298,21 +298,22 @@ label {
   .navbar {
     width: 100%;
     height: 15%;
+    margin-bottom: 10%;
   }
    .posts-column {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    /* margin-top: 15%; */
   }
    .jobs-column {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    /* margin: auto; */
   }
   .side-nav {
-    display: block;
+    display: none;
     font-size: 10px;
     margin-top: 10%;
     text-align: left;
@@ -338,18 +339,19 @@ label {
   }
    .posts-column {
     display: block;
-    width: 100%;
+    width: 75%;
     padding: 35px;
     margin: auto;
   }
    .jobs-column {
     display: block;
+    height: fit-content;
     width: 100%;
     padding: 35px;
     margin: auto;
   }
   .side-nav {
-    display: block;
+    visibility: hidden;
     font-size: 20px;
     margin-top: 10%;
     text-align: left;
@@ -384,13 +386,14 @@ label {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    margin-top: 10%;
+    
   }
    .jobs-column {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    margin-top: 5%;
   }
   
   .side-nav {
