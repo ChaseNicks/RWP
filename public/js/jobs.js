@@ -24,13 +24,14 @@ fetch(
             <ul class="job-info">
                 <li>${job.description}</li>
                 <li>${job.location.area.reverse().join(', ')}</li>
-                <li>${job.category.label}</li>
+                <li>Category: ${job.category.label}</li>
             </ul>
-            <br />
-            <a href="#">#tags</a> <a href="#">#tags</a>
-            <br />
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+           
+            
         </div>
+        <p>${new Date(job.created).getMonth() + 1}/${new Date(
+        job.created,
+      ).getDate()}/${new Date(job.created).getFullYear()}</p>
         <button class="apply-btn"><a href="${
           job.redirect_url
         }" target="_blank">Apply</a></button>
