@@ -202,27 +202,51 @@ li:hover {
 }
 .jobs-column {
   margin-right: auto;
-  padding-right: 0;
+  background-color: #2A363B;
+  /* padding: 10px; */
 }
-.job-card {
-  background-color: white;
-  color: black;
+#jobs {
+  margin-top: auto;
+  background-color: #2A363B;
+  color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   width: 90%;
   margin-right: 50px;
+  border-left: 2px solid #99B898;
+  border-right: 2px solid #99B898;
+  border-radius: 10px;
+}
+.jobs-content{
+  background-color: #2A363B;
+  padding: 5px;
+  border-radius: 5px;
+}
+.job-stlye {
+  border-top: 2px solid #99B898;
 }
 .jobs-media {
   background-color: #2A363B;
   padding-top: 10px;
   margin: -10px;
-  border: 2px double #E84A5F;
+  border: 2px solid #E84A5F;
   border-radius: 8px;
 }
 .job-title {
   color: white;
 }
+#job-info {
+  color: white;
+  text-shadow: 1px 2px 3px black;
+}
+.job-info:hover {
+  color: white;
+}
 .company-name {
   color: white;
+}
+#date-posted {
+  color: white;
+  font-weight: bold;
 }
 .apply-btn {
   padding: 5px;
