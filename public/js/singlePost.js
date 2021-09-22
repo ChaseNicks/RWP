@@ -1,4 +1,4 @@
-var dropdown = document.querySelector('.dropdown');
+var dropdown = document.querySelector('.options-drop');
 dropdown.addEventListener('click', (event) => {
   event.stopPropagation();
   dropdown.classList.toggle('is-active');
