@@ -19,7 +19,7 @@ fetch(
         labels: companies,
         datasets: [
           {
-            label: 'Top Tech Companies w/ Most Job Openings',
+            label: '# of Job Ads',
             data: jobs_open,
             backgroundColor: [
               'rgb(218, 247, 166)',
@@ -46,6 +46,15 @@ fetch(
             beginAtZero: false,
           },
         },
+        plugins: {
+          title: {
+              display: true,
+              text: 'Top Tech Companies by Job Ads',                
+              font: {
+                size: 30,
+            }
+          }
+      }
       },
     });
   });
@@ -58,6 +67,7 @@ fetch(
     const month = Object.keys(data.month)
       .sort()
       .reduce((a, b) => ((a[b] = data.month[b]), a), {});
+      
     const ctx = document.getElementById('MyChart2').getContext('2d');
     chartObject2.chart = new Chart(ctx, {
       type: 'line',
@@ -65,11 +75,13 @@ fetch(
         labels: [],
         datasets: [
           {
-            label: 'Avg Salary',
+            label: 'Salary',
             data: month,
-            backgroundColor: ['rgb(0, 0, 0)'],
-            borderColor: ['rgb(16, 21, 23))'],
-            borderWidth: 4,
+            borderColor: ['rgb(16, 21, 23)'],
+            drawOnChartArea: true,
+            borderWidth: 3,
+            pointBackgroundColor: ['rgb(255, 87, 51)'],
+            pointRadius: 8,
           },
         ],
       },
@@ -79,7 +91,25 @@ fetch(
             beginAtZero: false,
           },
         },
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: .2,
+            to: 0,
+            loop: true
+          },
+        },
+        plugins: {
+          title: {
+              display: true,
+              text: 'Averages Tech Job Salary',                
+              font: {
+                size: 30,
+            }
+          }
+      }
       },
     });
   });
-// month
+
