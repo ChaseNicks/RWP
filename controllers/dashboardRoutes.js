@@ -98,18 +98,12 @@ router.get('/users', withAuth, async ({ res }) => {
 });
 
 // Gets posts and returns them based on date_created
-router.get('/resent-posts', withAuth, async ({ res }) => {
+router.get('/recent-posts', withAuth, async (req, res) => {
   try {
     const dbRecentPostData = await Post.findAll({
-      attributes: [
-        'id',
-        'title',
-        'content',
-        'tag_id',
-        'upvotes',
-        'user_id',
-        'date_created',
-      ],
+      where: {
+        user_id: req.session.user_id,
+      },
       include: [
         {
           model: User,
@@ -118,35 +112,31 @@ router.get('/resent-posts', withAuth, async ({ res }) => {
         {
           model: Tag,
           attributes: ['category'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment'],
         },
       ],
       order: [['date_created', 'DESC']],
       limit: 8,
     });
 
-    const resentPosts = dbRecentPostData.map((post) =>
-      post.get({ plain: true }),
-    );
+    const posts = dbRecentPostData.map((post) => post.get({ plain: true }));
 
-    res.render('resent-posts', { resentPosts, logged_in: true });
+    res.render('dashboard', { posts, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // Get the posts and groups them by the tag name
-router.get('/posts-by-tags', withAuth, async ({ res }) => {
+router.get('/posts-by-tags', withAuth, async (req, res) => {
   try {
     const dbPostsByTagsData = await Post.findAll({
-      attributes: [
-        'id',
-        'title',
-        'content',
-        'tag_id',
-        'user_id',
-        'upvotes',
-        'date_created',
-      ],
+      where: {
+        user_id: req.session.user_id,
+      },
       include: [
         {
           model: User,
@@ -156,15 +146,17 @@ router.get('/posts-by-tags', withAuth, async ({ res }) => {
           model: Tag,
           attributes: ['category'],
         },
+        {
+          model: Comment,
+          attributes: ['comment'],
+        },
       ],
       order: [['tag_id', 'ASC']],
     });
 
-    const postsByTags = dbPostsByTagsData.map((post) =>
-      post.get({ plain: true }),
-    );
+    const posts = dbPostsByTagsData.map((post) => post.get({ plain: true }));
 
-    res.render('posts-by-tags', { postsByTags, logged_in: true });
+    res.render('dashboard', { posts, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -174,15 +166,9 @@ router.get('/posts-by-tags', withAuth, async ({ res }) => {
 router.get('/top-posts', withAuth, async (req, res) => {
   try {
     const dbUpvotesData = await Post.findAll({
-      attributes: [
-        'id',
-        'title',
-        'content',
-        'tag_id',
-        'upvotes',
-        'user_id',
-        'date_created',
-      ],
+      where: {
+        user_id: req.session.user_id,
+      },
       include: [
         {
           model: User,
@@ -192,13 +178,17 @@ router.get('/top-posts', withAuth, async (req, res) => {
           model: Tag,
           attributes: ['category'],
         },
+        {
+          model: Comment,
+          attributes: ['comment'],
+        },
       ],
       order: [['upvotes', 'DESC']],
     });
 
-    const topPosts = dbUpvotesData.map((post) => post.get({ plain: true }));
+    const posts = dbUpvotesData.map((post) => post.get({ plain: true }));
 
-    res.render('top-posts', { topPosts, logged_in: true });
+    res.render('dashboard', { posts, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
