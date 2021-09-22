@@ -1,6 +1,7 @@
 var chartObject = {};
 var chartObject2 = {};
 var chartObject3 = {};
+var chartObject4 = {};
 
 fetch(
   `http://api.adzuna.com/v1/api/jobs/us/top_companies?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
@@ -192,6 +193,68 @@ fetch(
               color: 'rgb(255, 255, 255)'
             },
           },
+        },
+      },
+    });
+  });
+
+fetch(
+  `https://api.adzuna.com/v1/api/jobs/us/histogram?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
+)
+  .then((response) => response.json())
+  .then((data) => {
+    const month = Object.keys(data.histogram)
+    .sort()
+    .reduce((a, b) => ((a[b] = data.histogram[b]), a), {});
+    var ctx = document.getElementById('MyChart4').getContext('2d');
+    chartObject4.chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: '# of people per salary range',
+            data: month,
+            backgroundColor: [
+              'rgb(218, 247, 166)',
+              'rgb(255, 195, 0)',
+              'rgb(255, 87, 51)',
+              'rgb(199, 0, 57)',
+              'rgb(144, 12, 63)',
+              'rgb(88, 24, 69)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 205, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+            ],
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            color: 'rgb(255, 255, 255)',
+            text: 'Number of Tech Career Respondents Per Salary Range',
+            font: {
+              size: 30,
+            }
+          },
+          legend: {
+            display: true,
+            labels: {
+              color: 'rgb(255, 255, 255)'
+            },
+          }
         },
       },
     });
