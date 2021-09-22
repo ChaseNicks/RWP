@@ -24,7 +24,8 @@ const deleteFormHandler = async (event) => {
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
-    alert(response.statusText);
+    console.log(response);
+    alert('Sorry you can delete only your posts!');
   }
 };
 
