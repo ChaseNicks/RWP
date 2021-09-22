@@ -450,3 +450,7 @@ label {
 #comment-text{
   color: black;
 }
+
+.vote {
+  margin: 0;
+}

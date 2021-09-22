@@ -41,6 +41,52 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/upvote/:id', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Post.increment(
+      {
+        upvotes: +1,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      },
+    );
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    res.status(200).json(dbPostData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.put('/downvote/:id', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Post.decrement(
+      {
+        upvotes: 1,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      },
+    );
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    res.status(200).json(dbPostData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({

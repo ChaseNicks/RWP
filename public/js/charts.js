@@ -197,7 +197,6 @@ fetch(
       },
     });
   });
-  
 
 fetch(
   `https://api.adzuna.com/v1/api/jobs/us/histogram?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
@@ -205,8 +204,8 @@ fetch(
   .then((response) => response.json())
   .then((data) => {
     const month = Object.keys(data.histogram)
-    .sort()
-    .reduce((a, b) => ((a[b] = data.histogram[b]), a), {});
+      .sort()
+      .reduce((a, b) => ((a[b] = data.histogram[b]), a), {});
     var ctx = document.getElementById('MyChart4').getContext('2d');
     chartObject4.chart = new Chart(ctx, {
       type: 'bar',
@@ -248,14 +247,14 @@ fetch(
             text: 'Number of Tech Career Respondents Per Salary Range',
             font: {
               size: 30,
-            }
+            },
           },
           legend: {
             display: true,
             labels: {
-              color: 'rgb(0, 0, 0)'
+              color: 'rgb(0, 0, 0)',
             },
-          }
+          },
         },
       },
     });

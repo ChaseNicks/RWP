@@ -14,19 +14,26 @@
   </div>
   <div class="column is-four-fifths">
 <div class="card">
-    <div class="card-content">
-        <div class="media">
-            <div class="media-center">
-                <figure class="image is-48x48">
+<div class="card-content columns">
+        <div class="column is-1">
+            <a><img class="upVote-arrow" src="/images/up.png" data-id="{{post.id}}"></a>
+            <p class="vote">{{post.upvotes}}</p>
+            <a><img class="downVote-arrow" src="/images/down.png" data-id="{{post.id}}"></a>
+        </div>
+        <div class="column">
+            <div class="media">
+            <div class="media-center ">
+               
+                <figure class="image is-48x48 ">
                     <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
                 </figure>
+                
             </div>
         </div>
-        <p class="subtitle is-4 has-text-weight-bold has-text-left">{{post.title}}</p>
+        <p class="subtitle is-4 has-text-weight-bold has-text-left"><a href="/dashboard/edit/{{post.id}}">{{post.title}}</a></p>
         <div class="content has-text-left">
-            <p></p>{{post.content}}</p>
-            
-
+            <p>{{post.content}}</p>
+        </div>
         </div>
         <div class="dropdown">
   <div class="dropdown-trigger">

@@ -42,7 +42,6 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'content', 'title', 'date_created'],
       include: [
         {
           model: Comment,
