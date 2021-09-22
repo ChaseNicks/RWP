@@ -447,3 +447,6 @@ label {
     visibility: hidden;
   }
 }
+#comment-text{
+  color: black;
+}

@@ -1,0 +1,89 @@
+
+<div class="columns pt-5">
+  <div class="column is-one-fifth is-three-quarters-mobile pt-5">
+    <div class="side-nav">
+      <ul id="nav-links">
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/dashboard/users">Users</a></li>
+        <li><a>Recent Posts</a></li>
+        <li><a>Posts by Tags</a></li>
+        <li><a>Top Posts</a></li>
+        <li><a href="/analytics">Industry Data</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="column is-four-fifths">
+<div class="card">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-center">
+                <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                </figure>
+            </div>
+        </div>
+        <p class="subtitle is-4 has-text-weight-bold has-text-left">{{post.title}}</p>
+        <div class="content has-text-left">
+            <p></p>{{post.content}}</p>
+            
+
+        </div>
+        <div class="dropdown">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Options</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+      <a href="#" class="dropdown-item " id="delete-post">
+        Delete Post
+      </a>
+    
+    </div>
+  </div>
+</div>
+    </div>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-item">Tags: {{post.tag.category}}</a>
+        {{!-- <a href="#" class="card-footer-item">Posted On: {{format_date post.date_created}}</a> --}}
+        <a href="#" class="card-footer-item">Posted by: {{post.user.username}}</a>
+        <a href="#" class="card-footer-item">{{post.comments.length}} comment</a>
+    </footer>
+    {{> comments post.comments}}
+
+    {{#if logged_in}}
+      <div
+        class="card"
+      >
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <hr />
+
+          <form id="comment-form" class="card-body">
+            <label class="form-label" id="comment-text">Add Comment</label>
+            <br>
+            <div class="input-group mb-3">
+                <input id="comment" name="comment-body" type="text" class="form-control" >
+            </div>
+           
+            <div class="d-grid gap-2">
+                <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <script src="/js/comment.js"></script>
+{{/if}}
+
+</div>
+</div>
+</div>
+
+
+
+
+<script src="/js/singlePost.js"></script>

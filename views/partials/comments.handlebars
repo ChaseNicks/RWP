@@ -1,0 +1,17 @@
+<div class="column">
+  {{#each this}}
+    <div class="card">
+        <h4 class="card-header"></h4>
+        <section class="card-body">
+            <div>
+              {{comment}}
+            </div>
+            <div>
+                {{user.username}}, {{format_date post.date_created}}
+            </div>
+        </section>
+        <button type="button" data-id="{{id}}" id="delete-comment">Delete comment</button>
+        
+    </div>
+  {{/each}}
+</div>
