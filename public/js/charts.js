@@ -54,14 +54,14 @@ fetch(
             text: 'Top Tech Companies by Job Ads',
             font: {
               size: 30,
-            }
+            },
           },
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)'
+              color: 'rgb(255, 255, 255)',
             },
-          }
+          },
         },
       },
     });
@@ -103,9 +103,9 @@ fetch(
           tension: {
             duration: 1000,
             easing: 'linear',
-            from: .2,
+            from: 0.2,
             to: 0,
-            loop: true
+            loop: true,
           },
         },
         plugins: {
@@ -115,14 +115,14 @@ fetch(
             text: 'Averages Tech Job Salary',
             font: {
               size: 30,
-            }
+            },
           },
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)'
+              color: 'rgb(255, 255, 255)',
             },
-          }
+          },
         },
       },
     });
@@ -140,7 +140,7 @@ fetch(
     var jobs_open = data.locations.map(function (elem) {
       return elem.count;
     });
-    console.log(jobs_open)
+    console.log(jobs_open);
     var ctx = document.getElementById('MyChart3').getContext('2d');
     chartObject3.chart = new Chart(ctx, {
       type: 'pie',
@@ -189,7 +189,7 @@ fetch(
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)'
+              color: 'rgb(255, 255, 255)',
             },
           },
         },

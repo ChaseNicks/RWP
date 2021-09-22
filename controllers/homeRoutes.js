@@ -35,6 +35,93 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Gets posts and returns them based on date_created
+router.get('/recent-posts', withAuth, async (req, res) => {
+  try {
+    const dbRecentPostData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment'],
+        },
+      ],
+      order: [['date_created', 'DESC']],
+      limit: 8,
+    });
+
+    const posts = dbRecentPostData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', { posts, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/posts-by-tags', withAuth, async ({ res }) => {
+  try {
+    const dbPostsByTagsData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment'],
+        },
+      ],
+      order: [['tag_id', 'ASC']],
+    });
+
+    const posts = dbPostsByTagsData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', { posts, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Gets top posts based on the upvotes
+router.get('/top-posts', withAuth, async (req, res) => {
+  try {
+    const dbUpvotesData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Tag,
+          attributes: ['category'],
+        },
+        {
+          model: Comment,
+          attributes: ['comment'],
+        },
+      ],
+      order: [['upvotes', 'DESC']],
+    });
+
+    const posts = dbUpvotesData.map((post) => post.get({ plain: true }));
+
+    res.render('homepage', { posts, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
