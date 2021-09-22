@@ -51,7 +51,7 @@ fetch(
         plugins: {
           title: {
             display: true,
-            color: 'rgb(255, 255, 255)',
+            color: 'rgb(0, 0, 0)',
             text: 'Top Tech Companies by Job Ads',
             font: {
               size: 30,
@@ -60,7 +60,7 @@ fetch(
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)',
+              color: 'rgb(0, 0, 0)',
             },
           },
         },
@@ -112,7 +112,7 @@ fetch(
         plugins: {
           title: {
             display: true,
-            color: 'rgb(255, 255, 255)',
+            color: 'rgb(0, 0, 0)',
             text: 'Averages Tech Job Salary',
             font: {
               size: 30,
@@ -121,7 +121,7 @@ fetch(
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)',
+              color: 'rgb(0, 0, 0)',
             },
           },
         },
@@ -181,7 +181,7 @@ fetch(
         plugins: {
           title: {
             display: true,
-            color: 'rgb(255, 255, 255)',
+            color: 'rgb(0, 0, 0)',
             text: 'Tech Job Ads by State',
             font: {
               size: 30,
@@ -190,13 +190,14 @@ fetch(
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)',
+              color: 'rgb(0, 0, 0)',
             },
           },
         },
       },
     });
   });
+  
 
 fetch(
   `https://api.adzuna.com/v1/api/jobs/us/histogram?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
@@ -243,7 +244,7 @@ fetch(
         plugins: {
           title: {
             display: true,
-            color: 'rgb(255, 255, 255)',
+            color: 'rgb(0, 0, 0)',
             text: 'Number of Tech Career Respondents Per Salary Range',
             font: {
               size: 30,
@@ -252,7 +253,7 @@ fetch(
           legend: {
             display: true,
             labels: {
-              color: 'rgb(255, 255, 255)'
+              color: 'rgb(0, 0, 0)'
             },
           }
         },
