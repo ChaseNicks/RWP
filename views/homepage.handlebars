@@ -12,9 +12,20 @@
       </ul>
     </div>
   </div>
-  <div class="column is-four-fifths">
-    {{#each posts as |post| }}
-    {{>posts post}}
-    {{/each}}
+  <section>
+    <div class="column is-four-fifths mt-2">
+      {{#each posts as |post| }}
+      {{>posts post}}
+      {{/each}}
+    </div>
+  </section>
+
+  {{!-- <div class="column is-two-fifths has-text-centered jobs-column">
+    <div class="card is-centered job-card" id="jobs">
+
+    </div>
+
   </div>
+
+  <script src="/js/jobs.js"></script> --}}
 </div>

@@ -148,19 +148,19 @@ a.home:hover {
 .posts-column {
   background-color: #99b898ab;
   height: 100vh;
-  padding-top: 5%;
-  margin-top: -38px;
-  margin-left: 25px;
+  /* padding-top: 5%; */
+  margin-top: 20px;
+  /* margin-left: 25px; */
   border-left: 3px solid #2A363B;
   border-right: 3px solid #2A363B;
   border-bottom: 3px solid #2A363B;
 }
 .charts-column {
-  background-color: #99b898ab;
+  background-color: #2A363B;
   height: fit-content;
-  padding-top: 5%;
-  margin-top: -38px;
-  margin-left: 25px;
+  /* padding-top: 10%; */
+  /* margin-top: -38px; */
+  /* margin-left: 25px; */
   border-left: 3px solid #2A363B;
   border-right: 3px solid #2A363B;
   border-bottom: 3px solid #2A363B;
@@ -170,6 +170,18 @@ a.home:hover {
   font-size: 3rem;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
     -1px 0 0 #000;
+}
+#charts-header {
+  color: #99B898;
+  font-size: 3rem;
+  text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
+    -1px 0 0 #000;
+}
+canvas {
+  background-color: snow;
+  padding: 10px;
+  border: 2px solid #E84A5F;
+  border-radius: 8px;
 }
 ul {
   list-style-type: square;
@@ -201,28 +213,52 @@ li:hover {
   border-radius: 15px;
 }
 .jobs-column {
-  margin-right: auto;
-  padding-right: 0;
+  /* margin-right: auto; */
+  background-color: #2A363B;
+  /* padding: 10px; */
 }
-.job-card {
-  background-color: white;
-  color: black;
+#jobs {
+  margin-top: auto;
+  background-color: #2A363B;
+  color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   width: 90%;
   margin-right: 50px;
+  border-left: 2px solid #99B898;
+  border-right: 2px solid #99B898;
+  border-radius: 10px;
+}
+.jobs-content{
+  background-color: #2A363B;
+  padding: 5px;
+  border-radius: 5px;
+}
+.job-stlye {
+  border-top: 2px solid #99B898;
 }
 .jobs-media {
   background-color: #2A363B;
   padding-top: 10px;
   margin: -10px;
-  border: 2px double #E84A5F;
+  border: 2px solid #E84A5F;
   border-radius: 8px;
 }
 .job-title {
   color: white;
 }
+#job-info {
+  color: white;
+  text-shadow: 1px 2px 3px black;
+}
+.job-info:hover {
+  color: white;
+}
 .company-name {
   color: white;
+}
+#date-posted {
+  color: white;
+  font-weight: bold;
 }
 .apply-btn {
   padding: 5px;
@@ -274,21 +310,22 @@ label {
   .navbar {
     width: 100%;
     height: 15%;
+    margin-bottom: 10%;
   }
    .posts-column {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    /* margin-top: 15%; */
   }
    .jobs-column {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    /* margin: auto; */
   }
   .side-nav {
-    display: block;
+    display: none;
     font-size: 10px;
     margin-top: 10%;
     text-align: left;
@@ -306,26 +343,34 @@ label {
       -1px 0 0 #000;
     font-weight: bold;
   }
+  .charts-column {
+    padding-top: 15%;
+  }
 }
 @media only screen and (max-width: 768px) {
   .navbar {
     width: 100%;
     height: 15%;
   }
+  .mobile-nav {
+    visibility: visible;
+    
+  }
    .posts-column {
     display: block;
-    width: 100%;
+    width: 75%;
     padding: 35px;
     margin: auto;
   }
    .jobs-column {
     display: block;
+    height: fit-content;
     width: 100%;
     padding: 35px;
     margin: auto;
   }
   .side-nav {
-    display: block;
+    visibility: hidden;
     font-size: 20px;
     margin-top: 10%;
     text-align: left;
@@ -353,6 +398,9 @@ label {
     height: 20%;
     margin-bottom: 200px;;
   }
+  .dropdown {
+    visibility: hidden;
+  }
   .navbar-brand {
     display: flex;
   }
@@ -360,22 +408,21 @@ label {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    margin-top: 10%;
+    
   }
    .jobs-column {
     display: block;
     width: 100%;
     padding: 35px;
-    margin: auto;
+    margin-top: 5%;
   }
   
   .side-nav {
-    display: block;
-    position: fixed;
-    /* margin-top: 10%; */
+    visibility: hidden;
+    font-size: 20px;
+    margin-top: 10%;
     text-align: left;
-    padding-right: 100px;
-    font-size: 5px;
   }
   #nav-links {
     font-size: 1rem;
@@ -395,7 +442,11 @@ label {
     font-weight: bold;
   }
 }
-
+@media only screen and (max-width: 2000px) {
+  .dropdown {
+    visibility: hidden;
+  }
+}
 #comment-text{
   color: black;
 }
