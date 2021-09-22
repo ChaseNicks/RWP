@@ -10,8 +10,8 @@ fetch(
       console.log(job);
       document.querySelector('#jobs').innerHTML += `
      
-      
-    <div class="card-content">
+    <section>  
+    <div class="card-content job-stlye">
         <div class="media jobs-media">
             <div class="media-content job-titles">
                 <p class="title is-8 job-title">${job.title}</p>
@@ -22,20 +22,23 @@ fetch(
         </div>
         <div class="content jobs-content">
             <ul class="job-info">
-                <li>${job.description}</li>
-                <li>${job.location.area.reverse().join(', ')}</li>
-                <li>Category: ${job.category.label}</li>
+                <li id="job-info">${job.description}</li>
+                <li id="job-info">${job.location.area.reverse().join(', ')}</li>
+                <li id="job-info">Category: ${job.category.label}</li>
             </ul>
            
             
         </div>
-        <p>${new Date(job.created).getMonth() + 1}/${new Date(
+        <p id="date-posted">Posted On: ${
+          new Date(job.created).getMonth() + 1
+        }/${new Date(job.created).getDate()}/${new Date(
         job.created,
-      ).getDate()}/${new Date(job.created).getFullYear()}</p>
+      ).getFullYear()}</p>
         <button class="apply-btn"><a href="${
           job.redirect_url
         }" target="_blank">Apply</a></button>
     </div>
+    </section>
 
 
       `;
