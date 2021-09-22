@@ -35,7 +35,7 @@
             <p>{{post.content}}</p>
         </div>
         </div>
-        <div class="dropdown">
+        <div class="dropdown options-drop is-right">
   <div class="dropdown-trigger">
     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
       <span>Options</span>
@@ -44,19 +44,18 @@
       </span>
     </button>
   </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+  <div class="dropdown-menu" role="menu">
     <div class="dropdown-content">
       <a href="#" class="dropdown-item " id="delete-post">
         Delete Post
       </a>
-    
     </div>
   </div>
 </div>
     </div>
     <footer class="card-footer">
         <a href="#" class="card-footer-item">Tags: {{post.tag.category}}</a>
-        {{!-- <a href="#" class="card-footer-item">Posted On: {{format_date post.date_created}}</a> --}}
+        <a href="#" class="card-footer-item">Posted On: {{format_date post.date_created}}</a>
         <a href="#" class="card-footer-item">Posted by: {{post.user.username}}</a>
         <a href="#" class="card-footer-item">{{post.comments.length}} comment</a>
     </footer>
@@ -78,7 +77,7 @@
             </div>
            
             <div class="d-grid gap-2">
-                <button type="submit">Submit</button>
+                <button class="button new-post-btn" id="newPostBtn">Submit</button>
             </div>
           </form>
         </div>

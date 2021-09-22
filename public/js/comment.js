@@ -55,6 +55,8 @@ const deleteButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('#delete-comment')
-  .addEventListener('click', deleteButtonHandler);
+const commentBlock = document.querySelector('#delete-comment');
+
+if (commentBlock) {
+  commentBlock.addEventListener('click', deleteButtonHandler);
+}

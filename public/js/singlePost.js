@@ -1,4 +1,4 @@
-var dropdown = document.querySelector('.dropdown');
+var dropdown = document.querySelector('.options-drop');
 dropdown.addEventListener('click', (event) => {
   event.stopPropagation();
   dropdown.classList.toggle('is-active');
@@ -24,7 +24,8 @@ const deleteFormHandler = async (event) => {
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
-    alert(response.statusText);
+    console.log(response);
+    alert('Sorry you can delete only your posts!');
   }
 };
 
