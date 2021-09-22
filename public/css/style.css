@@ -333,6 +333,14 @@ label {
   ul {
     list-style-type: none;
   }
+  .upVote-arrow {
+    width: 20px;
+    height: 20px;
+  }
+  .downVote-arrow {
+    width: 20px;
+    height: 20px;
+  }
  
   .logo-navbar {
     margin-top: 20px;
@@ -407,6 +415,7 @@ label {
    .posts-column {
     display: block;
     width: 100%;
+    height: fit-content;
     padding: 35px;
     margin-top: 10%;
     
@@ -416,6 +425,9 @@ label {
     width: 100%;
     padding: 35px;
     margin-top: 5%;
+  }
+  #job-info {
+    font-size: 12px;
   }
   
   .side-nav {
