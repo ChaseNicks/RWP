@@ -10,6 +10,9 @@
         <p class="subtitle is-4 has-text-weight-bold has-text-center">{{username}}</p>
 
         <div class="content has-text-center">
+            {{#each bios as |bio| }}
+            {{>bio user}}
+            {{/each}}
             <p>USER BIO{{bio}}</p>
 
         </div>
