@@ -1,32 +1,17 @@
 <!-- Loop over each object in the projects array -->
 
 <div class="columns pt-5">
-  <div class="column is-one-fifth is-three-quarters-mobile pt-5">
-    <div class="side-nav">
-      <ul id="nav-links">
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/dashboard/users">Users</a></li>
-        <li><a href="/recent-posts">Recent Posts</a></li>
-        <li><a href="/posts-by-tags">Posts by Tags</a></li>
-        <li><a href="/top-posts">Top Posts</a></li>
-        <li><a href="/analytics">Industry Data</a></li>
-      </ul>
-    </div>
+  <div class="column is-three-fifths mt-2">
+    {{#each posts as |post| }}
+    {{>posts post}}
+    {{/each}}
   </div>
-  <section>
-    <div class="column is-four-fifths mt-2">
-      {{#each posts as |post| }}
-      {{>posts post}}
-      {{/each}}
-    </div>
-  </section>
-
-  {{!-- <div class="column is-two-fifths has-text-centered jobs-column">
+  <div class="column is-two-fifths has-text-centered jobs-column">
     <div class="card is-centered job-card" id="jobs">
 
     </div>
 
   </div>
 
-  <script src="/js/jobs.js"></script> --}}
+  <script src="/js/jobs.js"></script>
 </div>

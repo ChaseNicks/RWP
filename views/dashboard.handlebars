@@ -1,32 +1,31 @@
-<section>
-  <div class="columns">
-    <div class="column is-one-fifth has-text-left pt-6">
-      <div class="side-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/dashboard/users">Users</a></li>
-          <li><a href="/dashboard/recent-posts">Recent Posts</a></li>
-          <li><a href="/dashboard/posts-by-tags">Posts by Tags</a></li>
-          <li><a href="/dashboard/top-posts">Top Posts</a></li>
-          <li><a href="/analytics">Industry Data</a></li>
-        </ul>
-      </div>
+<div class="columns">
+  {{!-- <div class="column is-one-fifth has-text-left pt-6">
+    <div class="side-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard/users">Users</a></li>
+        <li><a>Recent Posts</a></li>
+        <li><a>Posts by Tags</a></li>
+        <li><a>Top Posts</a></li>
+        <li><a href="/analytics">Industry Data</a></li>
+      </ul>
     </div>
-    <div class="column is-two-fifths posts-column">
-      <p class="title posts-header">Your Posts</p>
-      {{#each posts as |post| }}
-      {{>dashboard-posts post}}
-      {{/each}}
-    </div>
+  </div> --}}
+  <div class="column is-three-fifths posts-column">
+    <p class="title posts-header">Your Posts</p>
+    {{#each posts as |post| }}
+    {{>posts post}}
+    {{/each}}
+  </div>
 
 
-    <div class="column is-two-fifths has-text-centered jobs-column">
-      <div class="card is-centered job-card mt-5" id="jobs">
-
-      </div>
+  <div class="column is-two-fifth has-text-centered jobs-column">
+    <div class="card is-centered job-card" id="jobs">
 
     </div>
 
   </div>
-</section>
+
+</div>
+
 <script src="/js/jobs.js"></script>
