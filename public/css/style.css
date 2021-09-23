@@ -37,7 +37,7 @@ main {
   font-weight: bold;
 }
 .navbar {
-  overflow: hidden;
+ 
   background-color: #99B898;
   background-image: linear-gradient(to right, #99B898, #2A363B);
   position: fixed; /* Set the navbar to fixed position */
@@ -398,6 +398,14 @@ label {
     text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
       -1px 0 0 #000;
     font-weight: bold;
+  }
+  .upVote-arrow {
+    width: 20px;
+    height: 20px;
+  }
+  .downVote-arrow {
+    width: 20px;
+    height: 20px;
   }
 }
 @media only screen and (max-width: 998px) {
