@@ -19,16 +19,47 @@
         <i class="fas fa-keyboard"></i>
         <p class="logo-navbar">CODE SOCIAL</p>
       </div>
-      <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Explore
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/">
+                Home
+              </a>
+              <a class="navbar-item" href="/dashboard">
+                Dashboard
+              </a>
+              <a class="navbar-item" href="/dashboard/users">
+                Users
+              </a>
+              <a class="navbar-item" href="/recent-posts">
+                Recent Posts
+              </a>
+              <a class="navbar-item" href="/posts-by-tags">
+                Posts by Tag
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" href="/analytics">
+                Industry Data
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{!-- <div id="navMenu" class="navbar-menu">
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainpage-buttons">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-      </div>
+      </div> --}}
 
       <div class="navbar-end">
         <div class="navbar-item">
+
           {{#if logged_in}}
           <div class="buttons" id="mainpage-buttons">
             <button class="button new-post-btn" id="newPostBtn">
@@ -80,37 +111,10 @@
       {{/if}}
     </div>
     </div>
+
+
   </nav>
-  <div class="dropdown dropdown-m is-hoverable is-mobile mobile-nav">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Explore</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content">
-        <a href="/" class="dropdown-item">
-          Home
-        </a>
-        <a href="/dashboard/users" class="dropdown-item">
-          Users
-        </a>
-        <a href="#" class="dropdown-item">
-          Top Posts
-        </a>
-        <a href="#" class="dropdown-item">
-          Posts by Tag
-        </a>
-        <hr class="dropdown-divider">
-        <a href="/analytics" class="dropdown-item">
-          Industry Data
-        </a>
-      </div>
-    </div>
-  </div>
+
   {{{body}}}
 </body>
 {{#if logged_in}}
