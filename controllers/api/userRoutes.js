@@ -7,6 +7,8 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
       email: req.body.email,
+      github_link: req.body.github_link,
+      bio: req.body.bio,
     });
 
     console.log(userData);
