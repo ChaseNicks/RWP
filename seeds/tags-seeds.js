@@ -2,31 +2,19 @@ const { Tag } = require('../models');
 
 const tagData = [
   {
-    category: 'Front-End',
-  },
-  {
     category: 'Back-End',
   },
   {
-    category: 'Database',
+    category: 'Front-End',
   },
   {
-    category: 'Full-Stack Development',
+    category: 'Networking',
   },
   {
-    category: 'File Structure',
+    category: 'Interview Help',
   },
   {
-    category: 'Algorithms',
-  },
-  {
-    category: 'Data Structures',
-  },
-  {
-    category: 'Frameworks',
-  },
-  {
-    category: 'Libraries',
+    category: 'Company Info',
   },
 ];
 
