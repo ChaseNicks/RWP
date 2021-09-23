@@ -337,6 +337,17 @@ label {
   width: 100%;
   height: 100px;
 }
+.comment-card {
+  background-color: #2A363B;
+  color: white;
+}
+#comment-text {
+  color: white;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.418);
+}
+.comment-render {
+  font-weight: bolder;
+}
 .user-card {
   background-color: #99B898;
   padding: 10px;
@@ -350,7 +361,14 @@ label {
   color: #2A363B;
   text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.5);
 }
+.vote {
+  margin: 0;
+}
+.dropdown-trigger {
+ height: 0 !important;
+}
 /* Media Queries */
+
 @media only screen and (max-width: 576px) {
   body {
     margin-top: 25%;
@@ -528,17 +546,9 @@ label {
     visibility: hidden;
   } */
 }
-#comment-text{
-  color: black;
-}
 
-.vote {
-  margin: 0;
-}
 
-.dropdown-trigger {
- height: 0 !important;
-}
+
 
 
 

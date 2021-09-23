@@ -10,15 +10,13 @@
         <p class="subtitle is-4 has-text-weight-bold has-text-center">{{username}}</p>
 
         <div class="content has-text-center">
-            {{#each bios as |bio| }}
-            {{>bio user}}
-            {{/each}}
-            <p>USER BIO{{bio}}</p>
+
+            <p>{{bio}}</p>
 
         </div>
     </div>
     <footer class="card-footer">
         <a href="#" class="card-footer-item user-footer">Contact: {{email}}</a>
-        <a href="#" class="card-footer-item user-footer"><i class="fab fa-github"> </i>{{github}}</a>
+        <a href="#" class="card-footer-item user-footer"><i class="fab fa-github">: </i>{{github_link}}</a>
     </footer>
 </div>

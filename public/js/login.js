@@ -31,7 +31,7 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
   const github_link = document.querySelector('#github-signup').value.trim();
   const bio = document.querySelector('#bio-signup').value.trim();
-  console.log(username, email, password);
+  console.log(username, email, password, github_link, bio);
   if (username && email && password && github_link && bio) {
     const response = await fetch('/api/users', {
       method: 'POST',
