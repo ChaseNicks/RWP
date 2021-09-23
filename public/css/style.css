@@ -103,6 +103,15 @@ main {
   border-radius: 10px;
   box-shadow: 1px 2px 1px black;
 }
+.loginBtn {
+  background-color: #E84A5F;
+  margin-bottom: 50px;
+  color: black;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px black;
+}
 .landing-title {
   color: #E84A5F;
   text-shadow: 1px 0 0 rgb(255, 255, 255), 0 -1px 0 #000, 0 1px 0 #000,
@@ -165,9 +174,7 @@ a.home:hover {
 .posts-column {
   background-color: #99b898ab;
   height: 100vh;
-  /* padding-top: 5%; */
   margin-top: 20px;
-  /* margin-left: 25px; */
   border-left: 3px solid #2A363B;
   border-right: 3px solid #2A363B;
   border-bottom: 3px solid #2A363B;
@@ -300,6 +307,10 @@ li:hover {
   font-size: 2rem;
   font-weight: bold;
 }
+.email-login {
+  font-size: 2rem;
+  font-weight: bold;
+}
 .new-post-form {
   background-color: #2A363B;
   border: 2px solid black;
@@ -320,7 +331,6 @@ label {
   background-color: #E84A5F;
 }
 .single-post-card {
-  /* margin-top: 200px; */
   padding: 10px;
 }
 #comment {
@@ -335,10 +345,15 @@ label {
 .user-card-content {
   background-color: white;
 }
+.user-footer {
+  font-weight: bold;
+  color: #2A363B;
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.5);
+}
 /* Media Queries */
 @media only screen and (max-width: 576px) {
   body {
-    margin-top: 20%;
+    margin-top: 25%;
     width: 100%;
   }
   .navbar {
