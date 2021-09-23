@@ -70,6 +70,7 @@ await fetch(
     });
   });
 
+
 await fetch(
   `https://api.adzuna.com/v1/api/jobs/us/history?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&months=14&content-type=application/json`,
 )
@@ -200,7 +201,7 @@ await fetch(
       });
     });
   
-  fetch(
+  await fetch(
     `https://api.adzuna.com/v1/api/jobs/us/histogram?app_id=93a9f958&app_key=64741373e2fc20513e2967dc826628ff&category=it-jobs&content-type=application/json`,
   )
     .then((response) => response.json())
