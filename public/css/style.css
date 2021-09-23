@@ -374,7 +374,7 @@ label {
     display: block;
     height: fit-content;
     width: 100%;
-    padding: 35px;
+    /* padding: 35px; */
     margin: auto;
   }
   .side-nav {
