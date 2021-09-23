@@ -144,6 +144,39 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// Gets the info needed for one user and passes them to the handlebars renderer
+router.get('/bio', withAuth, async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk({
+      where: {
+        id: req.session.user_id,
+      },
+      include: [
+        {
+          model: Comment,
+        },
+        {
+          model: Tag,
+        },
+        {
+          model: Post,
+        },
+      ],
+    });
+
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+
+    const user = dbUserData.get({ plain: true });
+    res.render('bio', { user, logged_in: true });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
