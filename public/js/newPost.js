@@ -1,3 +1,33 @@
+// document.addEventListener('DOMContentLoaded', function () {
+//   // Get all "navbar-burger" elements
+//   var $navbarDrop = Array.prototype.slice.call(
+//     document.querySelectorAll('.navbar-dropdown'),
+//     0,
+//   );
+
+//   // Check if there are any navbar burgers
+//   if ($navbarDrop.length > 0) {
+//     // Add a click event on each of them
+//     $navbarDrop.forEach(function ($el) {
+//       $el.addEventListener('click', function () {
+//         // Get the target from the "data-target" attribute
+//         var target = $el.dataset.target;
+//         var $target = document.getElementById(target);
+
+//         // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+//         $el.classList.toggle('is-active');
+//         $target.classList.toggle('is-active');
+//       });
+//     });
+//   }
+// });
+
+document.querySelectorAll('.navbar-link').forEach(function (navbarLink) {
+  navbarLink.addEventListener('click', function () {
+    navbarLink.nextElementSibling.classList.toggle('is-hidden-mobile');
+  });
+});
+
 const postModal = document.querySelector('.new-post-modal');
 const newPostBtn = document.querySelector('#newPostBtn');
 const modalBg = document.querySelector('.modal-background');
@@ -9,6 +39,18 @@ newPostBtn.addEventListener('click', () => {
 });
 modalBg.addEventListener('click', () => {
   postModal.classList.remove('is-active');
+});
+
+// Script for toggling the dropdown menu on mobile.
+const mobileDropdown = document.querySelector('.mobileDropdown');
+const dropNav = document.querySelector('.dropNav');
+const closeDropdown = document.querySelector('.navbar-brand');
+
+mobileDropdown.addEventListener('click', () => {
+  dropNav.classList.add('has-dropdown', 'is-active');
+});
+closeDropdown.addEventListener('click', () => {
+  dropNav.classList.remove('has-dropdown', 'is-active');
 });
 
 const newFormHandler = async (event) => {
