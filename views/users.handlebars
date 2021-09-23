@@ -1,3 +1,7 @@
-{{#each users as |user| }}
-{{>userInfo user}}
-{{/each}}
+<div class="columns">
+    <div class="column is-four-fifths is-offset-1 user-column">
+        {{#each users as |user| }}
+        {{>userInfo user}}
+        {{/each}}
+    </div>
+</div>
