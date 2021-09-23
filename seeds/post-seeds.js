@@ -19,7 +19,7 @@ const postData = [
     title: "Algo's",
     content:
       'a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer',
-    tag_id: 6,
+    tag_id: 1,
     user_id: 3,
   },
   {
@@ -40,7 +40,7 @@ const postData = [
     title: "Algo's",
     content:
       'a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer',
-    tag_id: 6,
+    tag_id: 1,
     user_id: 2,
   },
   {
@@ -61,7 +61,7 @@ const postData = [
     title: "Algo's",
     content:
       'a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer',
-    tag_id: 6,
+    tag_id: 1,
     user_id: 1,
   },
 ];
