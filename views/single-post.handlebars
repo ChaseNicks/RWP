@@ -1,6 +1,6 @@
 <div class="columns pt-5">
   <div class="column is-one-fifth is-three-quarters-mobile pt-5">
-    <div class="side-nav">
+    {{!-- <div class="side-nav">
       <ul id="nav-links">
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/dashboard/users">Users</a></li>
@@ -9,9 +9,9 @@
         <li><a href="/dashboard/top-posts">Top Posts</a></li>
         <li><a href="/analytics">Industry Data</a></li>
       </ul>
-    </div>
+    </div> --}}
   </div>
-  <div class="column is-four-fifths">
+  <div class="column is-three-fifths">
     <div class="card">
       <div class="card-content columns">
         <div class="column is-1">
@@ -35,7 +35,7 @@
             <p>{{post.content}}</p>
           </div>
         </div>
-        <div class="dropdown options-drop is-right">
+        <div class="dropdown options-drop is-right is-up">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Options</span>
@@ -44,7 +44,7 @@
               </span>
             </button>
           </div>
-          <div class="dropdown-menu" role="menu">
+          <div class="dropdown-menu is-up" role="menu">
             <div class="dropdown-content">
               <a href="#" class="dropdown-item " id="delete-post">
                 Delete Post
