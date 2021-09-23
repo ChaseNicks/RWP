@@ -26,12 +26,13 @@
       </div>
 
       <div class="navbar-end">
+        {{#if logged_in}}
         <div class="navbar-item  dropNav">
           <a class="navbar-link mobileDropdown">
             Explore
           </a>
           <div class="navbar-dropdown is-right">
-            {{#if logged_in}}
+
             <button class="button new-post-btn" id="newPostBtn">
               POST
               <i class="fas fa-pen-alt"></i>
@@ -59,7 +60,9 @@
             <a class="navbar-item" href="/analytics">
               Industry Data
             </a>
-
+            {{else}}
+            <a class="loginBtn" href="/login">Login</a>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -112,9 +115,7 @@
         <button class="modal-close-btn is-large" aria-label="close"></button>
       </div>
 
-      {{else}}
-      <a href="/login">login</a>
-      {{/if}}
+
     </div>
     </div>
 
