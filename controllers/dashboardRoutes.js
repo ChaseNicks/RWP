@@ -196,19 +196,18 @@ router.get('/top-posts', withAuth, async (req, res) => {
 // Gets the info needed for one user and passes them to the handlebars renderer
 router.get('/bio', withAuth, async (req, res) => {
   try {
-    const dbUserData = await User.findByPk({
+    const dbUserData = await User.findOne({
       where: {
         id: req.session.user_id,
       },
       include: [
         {
           model: Comment,
-        },
-        {
-          model: Tag,
+          attributes: ['comment'],
         },
         {
           model: Post,
+          attributes: ['content'],
         },
       ],
     });
