@@ -33,14 +33,14 @@ To install the RWP App use the instructions bellow &#8595;
 
  source db/schema.sql
 
- npm run seeds
+ npm run seed
 
  npm run start
 ```
 
 ## Usage :
 
-User needs to install the app by running the command npm install then user needs to run the command mysql -u root -p with the mysql password entered user needs to run the command source db/schema.sql; to start the database then the quit; command to exit the mysql server after that user needs to create the .env file with the username the database name and the password for the environment variables. If user needs to seed the database user can run the command npm run seeds lastly user can run the command npm run start to start the express server.
+User needs to install the app by running the command `npm install` then user needs to run the command `mysql -u root -p` with the mysql password entered user needs to run the command `source db/schema.sql;` to start the database then the `quit;` command to exit the mysql server after that user needs to create the `.env` file with the username the database name and the password for the environment variables. If user needs to seed the database user can run the command `npm run seeds` lastly user can run the command `npm run start` to start the express server.
 
 ## Technologies :
 
@@ -56,10 +56,12 @@ User needs to install the app by running the command npm install then user needs
 - Dotenv.
 - Husky.
 - Prettier.
+- Charts.js.
+- Adzuna API.
 
 ## Screen shots :
 
-### Here are screen shots of my deployed RWP App!![ScreenShot](./public/images/Screenshot_1.png)![ScreenShot](./public/images/Screenshot_2.png)![ScreenShot](./public/images/Screenshot_3.png)
+### Here are screen shots of my deployed RWP App!![ScreenShot](./public/images/screen1.png)![ScreenShot](./public/images/screen2.png)![ScreenShot](./public/images/screen3.png)![ScreenShot](./public/images/screen4.png)
 
 ## Credits :
 
@@ -77,7 +79,6 @@ User needs to install the app by running the command npm install then user needs
 
 If you have any Question please feel free to contact me:
 
-- muiasar2012@gmail.com
 - [ChaseNicks](https://github.com/ChaseNicks)
 - [BeardoMattix](https://github.com/BeardoMattix)
 - [ebront08](https://github.com/ebront08)
