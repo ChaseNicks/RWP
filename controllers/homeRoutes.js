@@ -65,6 +65,7 @@ router.get('/recent-posts', withAuth, async (req, res) => {
   }
 });
 
+// Sorts the posts by their tags in an ascending order
 router.get('/posts-by-tags', withAuth, async ({ res }) => {
   try {
     const dbPostsByTagsData = await Post.findAll({
@@ -122,6 +123,7 @@ router.get('/top-posts', withAuth, async (req, res) => {
   }
 });
 
+// Finds one posts based on the id coming from the current request
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -174,8 +176,8 @@ router.get('/bio', withAuth, async (req, res) => {
   }
 });
 
+// If the user is already logged in, redirect the request to another route
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;

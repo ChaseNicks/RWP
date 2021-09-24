@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Creates a new post and saves it in the database with all the necessary relational data
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -17,6 +18,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Updates one post based on it's id and saves the updated post to the database
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.update(
@@ -41,6 +43,7 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Upvotes one the posts by incrementing the upvotes column
 router.put('/upvote/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.increment(
@@ -64,6 +67,7 @@ router.put('/upvote/:id', withAuth, async (req, res) => {
   }
 });
 
+// Downvotes one the posts by decrementing the upvotes column
 router.put('/downvote/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.decrement(
@@ -87,6 +91,8 @@ router.put('/downvote/:id', withAuth, async (req, res) => {
   }
 });
 
+// Deletes one of the posts based on the post id and the user id
+// So won't allow a user to delete post of another user
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
